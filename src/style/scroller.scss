@@ -1,0 +1,28 @@
+.scroller {
+	height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    background: #fff;
+    line-height: 48px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    z-index: 1;
+    transform: none;
+    
+
+    &.ng-hide {
+    	transform: translateX(200%);
+    }
+
+    & a {
+    	text-decoration: none;
+    }
+	
+	& span {
+		color: #000;
+		font-size: 2rem;
+	}
+}

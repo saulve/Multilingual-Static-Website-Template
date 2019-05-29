@@ -1,0 +1,41 @@
+.animate {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+
+	&-font {
+		-webkit-transition: font-size 1s;
+		-moz-transition: font-size 1s;
+		-o-transition: font-size 1s;
+		transition: font-size 1s;
+	}
+
+	&-color {
+		-webkit-transition: color 0.5s;
+		-moz-transition: color 0.5s;
+		-o-transition: color 0.5s;
+		transition: color 0.5s;
+	}
+
+	&-background-color {
+		-webkit-transition: background-color 0.5s;
+		-moz-transition: background-color 0.5s;
+		-o-transition: background-color 0.5s;
+		transition: background-color 0.5s;
+	}
+
+	&-slide {
+		-webkit-transition: transform 1s ease-in-out;
+		-moz-transition: transform 1s ease-in-out;
+		-o-transition: transform 1s ease-in-out;
+		transition: transform 1s ease-in-out;
+	}
+
+	&-opacity {
+		-webkit-transition: opacity 1s ease;
+		-moz-transition: opacity 1s ease;
+		-o-transition: opacity 1s ease;
+		transition: opacity 1s ease;
+	}
+}

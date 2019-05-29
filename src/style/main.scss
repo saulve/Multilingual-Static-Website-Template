@@ -1,0 +1,73 @@
+@import "./_avalanche";
+@import "~normalize.css/normalize.css";
+@import "~flag-icon-css/sass/_flag-icon";
+@import "./fonts";
+@import "./navigation";
+@import "./typography";
+@import "./scroller";
+@import "./animation";
+
+body {
+  background: #FDFBFB;
+  color: #281E00;
+  overflow-x: hidden;
+}
+
+header {
+  height: 100vh;
+  background: #005448;
+  
+  & .title {
+    color: #fff;
+    position: relative;
+    @media screen and (min-width: 360px) {
+      top: 50%;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.header {
+  padding: 10px;
+    &__main {
+      color: #fff
+    }
+    &__wine-box {
+      @media screen and (max-width: 1024px) {
+        margin-top: 1rem;
+      }
+    }
+    &--middle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--center {
+      text-align: center;
+    }
+    &--no-margin-bottom {
+      margin-bottom: 0;
+    }
+}
+
+a {
+  color: #03A9F4;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.grid__cell--nested {
+  padding: 0px;
+}

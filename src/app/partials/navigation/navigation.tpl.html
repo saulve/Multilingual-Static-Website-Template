@@ -1,0 +1,44 @@
+<div class="nav-bar__container">
+		<div class="4/12--desk nav-bar grid__cell">
+			<span 
+				ng-click="nav.burgerClicked = !nav.burgerClicked" 
+				class="nav-bar__burger">&#9776;
+			</span>
+		</div>
+		<div class="6/12--desk grid__cell grid--right nav-bar__links padding-top-10" ng-class="{'nav-bar__links--hidden': !nav.burgerClicked,
+		'nav-bar__links--show': nav.burgerClicked}">
+			<a href="#" translate>NAVIGATION.NAV_1</a>
+			<a href="#" translate>NAVIGATION.NAV_2</a>
+			<a href="#" translate>NAVIGATION.NAV_3</a>
+		</div>
+		<div class="2/12--desk grid__cell nav-bar__lang-box padding-top-10"
+			ng-mouseleave="nav.selectLangHover = false"
+			ng-blur="nav.selectLangHover = false"
+			ng-class="{'nav-bar__lang-box--mobile-open': nav.burgerClicked}">
+			<span class="nav-bar__lang-box-current">
+				<a
+				href
+				ng-click="nav.selectLangHover = !nav.selectLangHover"
+				class="nav-bar__lang-box--selected">
+					<span class="flag-icon {{nav.currentLang.CLASS}}"></span>
+					<span class="padding-left-5">{{nav.currentLang.NAME}}</span>
+					<span class="padding-left-5">&#9207;</span>
+				</br>
+				</a>
+			</span>
+			<div class="nav-bar__lang-box-outer">
+				<span ng-repeat="language in nav.languages">
+					<a
+					href
+					ng-if="nav.currentLang.SHORT_CODE !== language.SHORT_CODE"
+					ng-hide="!nav.selectLangHover"
+					ng-click="nav.switchLang(language)"
+					class="animate-color">
+					<span class="flag-icon {{language.CLASS}}"></span>
+					<span class="padding-left-5">{{language.NAME}}</span>
+					</br>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>

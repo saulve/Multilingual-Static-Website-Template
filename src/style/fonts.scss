@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'parsek', Arial;
+  font-weight: normal;
+  font-style: normal;
+}
+
+p, span, a, li, input, textarea {
+  font-family: 'PT Sans', Arial, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1:lang(zz), h2:lang(zz), h3:lang(zz), h4:lang(zz), h5:lang(zz), h6:lang(zz) {
+  font-family: 'Poppins', Arial, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+p:lang(zz), span:lang(zz), a:lang(zz), li:lang(zz), input:lang(zz), textarea:lang(zz) {
+  font-family: 'Poppins', Arial, serif;
+  font-weight: normal;
+  font-style: normal;
+}

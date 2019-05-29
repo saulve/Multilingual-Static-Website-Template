@@ -1,0 +1,87 @@
+/**
+ *
+ * This SASS class can be used to create dynamic font sizes
+ * based on media queries. You can set base font size and
+ * set sizes for different text elements (h1, p, a, etc.)
+ * for each browser with breakpoint.
+ */
+
+// body font size
+$browser-context: 16;
+
+// breakpoint variables
+$lg: 1170px;
+$md: 1024px;
+$sm: 800px;
+$xs: 499px;
+
+// typography scale
+$body-font-size: (null: $browser-context);
+$h1-font-size: (null: 92, $md: 110, $sm: 78, $xs: 46);
+$h2-font-size: (null: 76, $md: 94, $sm: 62, $xs: 40);
+$h3-font-size: (null: 60, $md: 78, $sm: 56, $xs: 36);
+$h4-font-size: (null: 44, $md: 62, $sm: 40, $xs: 30);
+$text-font-size: (null: 16, $md: 22, $sm: 18);
+
+// unitless function to convert px to rem
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+    @if $mq2 == false {
+        @media ($maxmin: $mq01) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: $mq01) and (max-width: $mq2) {
+            @content;
+        }
+    }
+}
+
+// responsive font size mixin
+@mixin font-size-map($font-size-map) {
+    @each $breakpoint, $font-size in $font-size-map {
+        @if $breakpoint == null {
+            font-size: em($font-size);
+        } @else {
+            @include breakpoint($breakpoint) {
+                font-size: em($font-size);
+            }
+        }
+    }
+}
+
+html {
+    line-height: 1.2;
+    @include font-size-map($body-font-size);
+}
+
+h1 {
+    @include font-size-map($h1-font-size);
+}
+
+h2 {
+    @include font-size-map($h2-font-size);
+}
+
+h3 {
+    @include font-size-map($h3-font-size);
+}
+
+h4 {
+    @include font-size-map($h4-font-size);
+}
+
+p, span, a, li {
+	@include font-size-map($text-font-size);
+}
